@@ -155,9 +155,9 @@ function ifUndefined(val1, val2) {
  * @param {String} types
  * @param {Function} handler
  */
-function addEventListeners(target, types, handler) {
+function addEventListeners(target, types, handler, useCapture) {
     each(splitStr(types), function(type) {
-        target.addEventListener(type, handler, true);
+        target.addEventListener(type, handler, useCapture);
     });
 }
 
@@ -169,7 +169,7 @@ function addEventListeners(target, types, handler) {
  */
 function removeEventListeners(target, types, handler) {
     each(splitStr(types), function(type) {
-        target.removeEventListener(type, handler, true);
+        target.removeEventListener(type, handler, useCapture);
     });
 }
 
